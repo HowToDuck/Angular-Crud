@@ -1,1 +1,31 @@
-<p>list-entry works!</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Current Ep</th>
+      <th scope="col">Total Ep</th>
+      <th scope="col">Rating</th>
+      <th scope="col">Notes</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let entry of Entries; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ entry.name }}</td>
+      <td>{{ entry.current }}</td>
+      <td>{{ entry.total }}</td>
+      <td>{{ entry.season }}</td>
+      <td>{{ entry.rating }}</td>
+      <td>{{ entry.notes }}</td>
+      <td>
+        <span (click)="removeEntry(entry)" class="text-danger">Delete</span>
+        &nbsp;
+        <span routerLink="/update-entry/{{ entry.id }}" class="text-primary"
+          >Edit</span
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>
