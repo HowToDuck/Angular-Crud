@@ -30,6 +30,6 @@ export class CreateEntryComponent implements OnInit {
 
   onSubmit() {
     this.entryService.createEntry(this.entryForm.value);
-    this.router.navigate(['list-entry']);
+    this.router.navigate(['list-entries']);
   }
 }

@@ -20,8 +20,11 @@ export class EditEntryComponent implements OnInit {
   ) {
     this.editForm = this.formBuilder.group({
       name: [''],
-      email: [''],
-      contact: [''],
+      current: [''],
+      total: [''],
+      season: [''],
+      rating: [''],
+      notes: [''],
     });
   }
 
@@ -32,8 +35,8 @@ export class EditEntryComponent implements OnInit {
       this.entryRef = res;
       this.editForm = this.formBuilder.group({
         name: [this.entryRef.name],
-        current: [this.entryRef.current_ep],
-        total: [this.entryRef.total_ep],
+        current: [this.entryRef.current],
+        total: [this.entryRef.total],
         season: [this.entryRef.season],
         rating: [this.entryRef.rating],
         notes: [this.entryRef.notes],
@@ -45,6 +48,6 @@ export class EditEntryComponent implements OnInit {
     const id = this.act.snapshot.paramMap.get('id');
 
     this.entryService.updateEntry(this.editForm.value, id);
-    this.router.navigate(['list-entry']);
+    this.router.navigate(['list-entries']);
   }
 }

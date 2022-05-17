@@ -37,16 +37,16 @@ export class EntryService {
 
   deleteEntry(entry) {
     return this.angularFirestore
-      .collection('user-collection')
+      .collection('entry-collection')
       .doc(entry.id)
       .delete();
   }
 
   updateEntry(entry: Entry, id) {
-    return this.angularFirestore.collection('user-collection').doc(id).update({
+    return this.angularFirestore.collection('entry-collection').doc(id).update({
       name: entry.name,
-      current: entry.current_ep,
-      total: entry.total_ep,
+      current: entry.current,
+      total: entry.total,
       season: entry.season,
       rating: entry.rating,
       notes: entry.notes,
