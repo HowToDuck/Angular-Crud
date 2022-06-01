@@ -3,8 +3,8 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
-      <th scope="col">Current Ep</th>
-      <th scope="col">Total Ep</th>
+      <th scope="col">Episode</th>
+      <th scope="col">Season</th>
       <th scope="col">Rating</th>
       <th scope="col">Notes</th>
       <th scope="col">Action</th>
@@ -14,10 +14,9 @@
     <tr *ngFor="let entry of Entries; let i = index">
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ entry.name }}</td>
-      <td>{{ entry.current }}</td>
-      <td>{{ entry.total }}</td>
+      <td>{{ entry.current }} / {{ entry.total }}</td>
       <td>{{ entry.season }}</td>
-      <td>{{ entry.rating }}</td>
+      <td>{{ entry.rating || "X" }} / 5</td>
       <td>{{ entry.notes }}</td>
       <td>
         <span (click)="removeEntry(entry)" class="text-danger">Delete</span>
