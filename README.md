@@ -36,7 +36,7 @@ export const environment = {
 
 ### Data
 
-![Screenshot](AngularCrud-sample.png)
+![Screenshot](AngularCrud-Sample.png)
 I used this angular app to store data for television shows, if you want to change what data is being stored and presented you can edit **create-entry.component.html, edit-entry.component.html,** and **list-entry.component.html**.
 
 
